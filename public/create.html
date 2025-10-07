@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Room</title>
+  <style>
+    body {
+      background-color: #001638;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Create Room</h1>
+  <p id="code"></p>
+  <button id="createRoomBtn">Create Room</button>
+
+  <script>
+    const code = Math.floor(100000 + Math.random() * 900000);
+    document.getElementById("code").innerText = "Room ID: " + code;
+    document.getElementById("createRoomBtn").addEventListener("click", () => {
+      location.href = `/room/${code}`;
+    });
+  </script>
+</body>
+</html>

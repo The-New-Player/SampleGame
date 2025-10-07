@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Enter Room</title>
+  <style>
+    body {
+      background-color: #001638;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    input, button {
+      margin: 10px;
+      padding: 10px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Enter Room</h1>
+  <input id="roomInput" type="text" placeholder="Enter 6-digit ID">
+  <button id="enterBtn">Enter Room</button>
+
+  <script>
+    document.getElementById("enterBtn").addEventListener("click", () => {
+      const roomId = document.getElementById("roomInput").value.trim();
+      if (roomId.length === 6) {
+        location.href = `/room/${roomId}`;
+      } else {
+        alert("Please enter a 6-digit room ID");
+      }
+    });
+  </script>
+</body>
+</html>
